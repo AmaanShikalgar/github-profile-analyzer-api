@@ -1,0 +1,42 @@
+{
+  "info": {
+    "name": "GitHub Profile Analyzer API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://github-profile-analyzer-api-9622.up.railway.app"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/"
+      }
+    },
+    {
+      "name": "Analyze GitHub Profile",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/analyze/AmaanShikalgar"
+      }
+    },
+    {
+      "name": "Get All Profiles",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/profiles"
+      }
+    },
+    {
+      "name": "Get Single Profile",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/profiles/AmaanShikalgar"
+      }
+    }
+  ]
+}

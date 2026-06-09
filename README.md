@@ -99,7 +99,7 @@ Response:
 ```
 POST /analyze/:username
 ```
-Example: `POST /analyze/torvalds`
+Example: `POST /analyze/AmaanShikalgar`
 
 Response:
 ```json

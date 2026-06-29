@@ -116,3 +116,22 @@ exports.analyzeProfile = async (req, res) => {
         });
     }
 };
+
+exports.deleteProfile = async (req, res) => {
+    const username = req.params.username;
+
+    try {
+        const [result] = await pool.query(
+            "DELETE FROM github_profiles WHERE username = ?",
+            [username]
+        );
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ message: "Profile not found" });
+        }
+
+        res.json({ message: `Profile @${username} deleted successfully` });
+    } catch (err) {
+        res.status(500).json({ message: "Database error", error: err.message });
+    }
+};

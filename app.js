@@ -1,10 +1,18 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const pool = require("./config/db");
 
 const profileRoutes = require("./routes/profileRoutes");
 
 const app = express();
+
+app.use(cors({
+    origin: '*',
+    methods: ['GET','POST','OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 
 async function testDB() {
